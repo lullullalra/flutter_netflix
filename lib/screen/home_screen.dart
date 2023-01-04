@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix/model/model_movie.dart';
+import 'package:flutter_netflix/widget/box_slider.dart';
 import 'package:flutter_netflix/widget/carousel_slider.dart';
 import 'package:flutter_netflix/widget/circle_slider.dart';
 
@@ -42,15 +43,16 @@ class _HomeScreenState extends State<HomeScreen>{
 
   @override
   Widget build(BuildContext context){
-    return ListView(children: <Widget>[
-      Stack(children: <Widget>[
-        CarouselImage(movies: movies),
-        TopBar(),
+    return ListView(
+      children: <Widget>[
+        Stack(
+          children: <Widget>[
+          CarouselImage(movies: movies),
+          TopBar(),
           ],
         ),
-      CircleSlider(
-          movies: movies,
-      ),
+        CircleSlider(movies: movies),
+        BoxSlider(movies: movies),
       ],
     );
   }
